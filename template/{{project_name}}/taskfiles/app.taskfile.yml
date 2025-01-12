@@ -1,0 +1,27 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  dev:
+    cmds:
+      - uvicorn app.main:app --reload
+
+  client:
+    cmds:
+      - open http://127.0.0.1:8000/_health
+
+  activate:
+    cmds:
+      - source .venv/bin/activate
+    desc: Activate the virtual environment
+
+  lint:
+    cmds:
+      - ruff check .
+    desc: Run Ruff for linting and formatting checks
+
+  default:
+    cmds:
+      - task --list
+    silent: true

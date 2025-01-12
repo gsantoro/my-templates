@@ -1,0 +1,13 @@
+[project]
+name = "{{ project_name }}"
+version = "0.1.0"
+requires-python = ">={{ python_version }}"
+dependencies = [
+    "fastapi{{ '==' + fastapi_version if fastapi_version != 'latest' else '' }}",
+    "uvicorn[standard]"
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff"
+]

@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/_health")
+async def health_check():
+    """
+    Health check endpoint that returns HTTP 200.
+    """
+    return {"status": "ok"}
